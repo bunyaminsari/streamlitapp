@@ -22,13 +22,16 @@ url = f"https://charts.finviz.com/chart.ashx?t={my_text}"
 st.image(url)
 
 # Displays short information about the business
+st.subheader("Business Summary")
 st.write(stock.info["longBusinessSummary"])
 
 # Retrieving the last 1 month of history and display it
+st.subheader("Stock History for the Last 1 Month")
 hist = stock.history(period="1mo")
 st.write(hist)
 
 # Creating a chart of the history retrieved.
+st.subheader("History in Graphics")
 st.line_chart(hist)
 
 
